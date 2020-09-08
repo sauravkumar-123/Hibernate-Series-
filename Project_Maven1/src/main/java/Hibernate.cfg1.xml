@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+	
+	<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/myhibernate1</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">12345</property>
+        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+         <!-- <property name="hbm2ddl.auto">create</property>  -->
+          <property name="hbm2ddl.auto">update</property> 
+        
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+     <!--      <mapping class="com.Hibernate.Project_Maven1.Student"/>
+        <mapping class="com.Hibernate.Project_Maven1.Address"/>
+        -->
+        <mapping class="com.Hibernate.Project_Maven2.Student_Details"/>
+        <mapping class="com.Hibernate.Project_Maven2.Course_detail"/>
+                                               
+       <mapping class="com.Hibernate.Project_Maven3.Question"/>
+        <mapping class="com.Hibernate.Project_Maven3.Answer"/> 
+        
+        
+        <mapping class="com.Hibernate.Project_Maven3.Employee"/>
+        <mapping class="com.Hibernate.Project_Maven3.Accounts"/>
+       <mapping class="com.Hibernate.Project_Maven3.GetBankDetails"/>
+        
+        <!-- <mapping class="com.Hibernate.Hql.Hql1"/>-->
+      <mapping class="com.Hibernate.Project_Maven3.Books"/> 
+      <mapping class="com.Hibernate.Project_Maven3.Author"/>
+      
+         
+        <mapping class="com.Hibernate.Project_Maven3.Books"/>
+        <mapping class="com.Hibernate.Project_Maven3.Author"/>
+        <mapping class="com.Hibernate.Project_Maven3.Book_Author_Run"/>
+        
+        <mapping resource="com/Hibrnate/Mapping/xml/Customer.hbm.xml"/>
+        
+<!--  
+        //JDBC connection pool (use the built-in) 
+        
+        <property name="connection.pool_size">10</property>
+        <property name="maxActive" value="10" />
+
+       //SQL dialect 
+       
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+        //Enable Hibernate's automatic session context management 
+        <property name="current_session_context_class">thread</property>
+
+        //Disable the second-level cache  
+        
+        <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+        // Echo all executed SQL to stdout 
+        
+        <property name="show_sql">true</property>
+
+        //Drop and re-create the database schema on startup 
+        
+        <property name="hbm2ddl.auto">create</property>
+
+     //Mapping files 
+      <mapping resource="database/config/mapping/test.hbm.xml"/>
+      -->
+    </session-factory>
+</hibernate-configuration>
